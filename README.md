@@ -13,3 +13,4 @@
 
 -------------------------------------------------
 - laravel new laravel10 --pest --breeze
+- pennant : https://www.youtube.com/watch?v=0huthUNaZ08&list=PL3VM-unCzF8j7Do3dDNqH_vL20kGWubNA&index=5
