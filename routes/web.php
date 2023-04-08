@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Process;
 |
 */
 
+auth()->onceUsingId(2);
 Route::get('/', function () {
     return view('welcome');
     echo "<pre>";
