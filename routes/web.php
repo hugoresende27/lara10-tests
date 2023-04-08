@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Process;
+use Laravel\Pennant\Feature;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,10 @@ use Illuminate\Support\Facades\Process;
 |
 */
 
-auth()->onceUsingId(2);
+auth()->onceUsingId(5);
 Route::get('/', function () {
+//    Feature::activate('new-design');
+//    Feature::activate('dashboard-v2');
     return view('welcome');
     echo "<pre>";
 //    return Process::run('ls -la')->output();
@@ -36,5 +39,16 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/dash', function (){
+    if(Feature::active('dashboard-v2')){
+        return redirect('/new-dash');
+    }
+    return 'dashboard';
+});
+
+Route::get('/new-dash', function (){
+    return 'new dashboard';
+})->middleware('feature:dashboard-v2');
 
 require __DIR__.'/auth.php';
