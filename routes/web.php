@@ -54,5 +54,6 @@ Route::get('/new-dash', function (){
 
 
 Route::get('rel-farm', [FarmController::class, 'index'])->name('farms');
+Route::get('rel-plumber', [\App\Http\Controllers\PipesLda\MainController::class, 'index'])->name('pipes');
 
 require __DIR__.'/auth.php';

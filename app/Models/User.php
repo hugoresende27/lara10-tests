@@ -58,6 +58,6 @@ class User extends Authenticatable
 
     public function farms(): HasMany    //HasMany use plural in the funtion
     {
-        return $this->hasMany(Farm::class);
+        return $this->hasMany(Farm::class, 'user_id');
     }
 }
