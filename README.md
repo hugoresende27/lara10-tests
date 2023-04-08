@@ -16,3 +16,4 @@
 - pennant : https://www.youtube.com/watch?v=0huthUNaZ08&list=PL3VM-unCzF8j7Do3dDNqH_vL20kGWubNA&index=5
 - relationships : https://www.youtube.com/playlist?list=PL1JpS8jP1wgA7YIkG5pJDa0XwvonK-mQR
     1. A User has one House and the House belongs to the User
+    2. A user has many Farms and the Farms belongs to a User

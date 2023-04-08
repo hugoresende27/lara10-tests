@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FarmController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Process;
@@ -50,5 +51,8 @@ Route::get('/dash', function (){
 Route::get('/new-dash', function (){
     return 'new dashboard';
 })->middleware('feature:dashboard-v2');
+
+
+Route::get('rel-farm', [FarmController::class, 'index'])->name('farms');
 
 require __DIR__.'/auth.php';

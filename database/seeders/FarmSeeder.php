@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\House;
+use App\Models\Farm;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class HouseSeeder extends Seeder
+class FarmSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        House::factory(1)->create();
+        Farm::factory(20)->create();
     }
 }

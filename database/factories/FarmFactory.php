@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\House>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Farm>
  */
-class HouseFactory extends Factory
+class FarmFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +16,8 @@ class HouseFactory extends Factory
      */
     public function definition(): array
     {
-
         return [
-            'user_id' => 3
+//            'user_id' => rand(1,10)
         ];
     }
 }
