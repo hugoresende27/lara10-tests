@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -46,5 +47,10 @@ class User extends Authenticatable
     {
 //        return $this->id == 1;
         return in_array( $this->id, [1,2]) ;
+    }
+
+    public function house(): HasOne
+    {
+        return $this->hasOne(House::class, 'user_id');
     }
 }
