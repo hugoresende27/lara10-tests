@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Lottery;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Pennant\Feature;
@@ -29,5 +30,10 @@ class AppServiceProvider extends ServiceProvider
         Feature::define('dashboard-v2', function() {
             return Lottery::odds(3 / 4);
         });
+
+        Relation::morphMap([
+           'employee' => 'App\Models\JoeRental\Employee',
+           'customer' => 'App\Models\JoeRental\Customer',
+        ]);
     }
 }

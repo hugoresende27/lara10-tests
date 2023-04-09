@@ -26,4 +26,7 @@
 ----------------------------------------------------------------------------------------
    - > Group belongs to many Users     `Many to many relatioship`
    - > User belongs to many Groups     `Many to many relatioship`
-
+----------------------------------------------------------------------------------------
+   - > Employee can rent a car     `Polymorphic (One To One)`   Poly = many, Forms
+   - > Customer can rent a car     `Polymorphic (One To One)`
+   - > Parents : Employee, Customer ; Child: Car

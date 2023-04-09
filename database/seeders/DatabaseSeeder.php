@@ -5,6 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Group;
 use App\Models\GroupUser;
+use App\Models\JoeRental\Car;
+use App\Models\JoeRental\Customer;
+use App\Models\JoeRental\Employee;
 use App\Models\PipesLda\Client;
 use App\Models\PipesLda\Plumber;
 use App\Models\PipesLda\Referral;
@@ -22,8 +25,11 @@ class DatabaseSeeder extends Seeder
 //         Plumber::factory(20)->create();
 //         Client::factory(20)->create();
 //         Referral::factory(20)->create();
-         Group::factory(20)->create();
-         GroupUser::factory(20)->create();
+//         Group::factory(20)->create();
+//         GroupUser::factory(20)->create();
+//        Car::factory(20)->create();
+        Employee::factory(20)->create();
+        Customer::factory(20)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
