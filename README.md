@@ -24,4 +24,6 @@
    - > Client has many Referrals, Referrals belongs to Client   `Has One Through / Has Many Through`
    - > Plumber has many Referrals Through Client   `Has One Through / Has Many Through`
 ----------------------------------------------------------------------------------------
+   - > Group belongs to many Users     `Many to many relatioship`
+   - > User belongs to many Groups     `Many to many relatioship`
 

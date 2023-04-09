@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -59,5 +60,14 @@ class User extends Authenticatable
     public function farms(): HasMany    //HasMany use plural in the funtion
     {
         return $this->hasMany(Farm::class, 'user_id');
+    }
+
+    public function groups(): BelongsToMany
+    {
+        return $this->belongsToMany(Group::class, 'group_user', 'group_id', 'user_id')
+            ->as ('community')
+            ->using(GroupUser::class)
+            ->withPivot('active')
+            ->withTimestamps();
     }
 }

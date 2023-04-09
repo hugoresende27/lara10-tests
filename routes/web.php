@@ -56,4 +56,8 @@ Route::get('/new-dash', function (){
 Route::get('rel-farm', [FarmController::class, 'index'])->name('farms');
 Route::get('rel-plumber', [\App\Http\Controllers\PipesLda\MainController::class, 'index'])->name('pipes');
 
+
+Route::get('rel-many-to-many', [\App\Http\Controllers\PipesLda\MainController::class, 'manyToMany']);
+Route::get('rel-many-to-many2', [\App\Http\Controllers\PipesLda\MainController::class, 'manyToMany2']);
+
 require __DIR__.'/auth.php';
